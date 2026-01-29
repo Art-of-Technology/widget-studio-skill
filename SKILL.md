@@ -84,9 +84,10 @@ declare global {
 
 ### Next.js Projects (App Router)
 
-Add this to `app/layout.tsx`:
+Add this code to app/layout.tsx. If that file is not a client-side component (doesn't have 'use client' directive), find the first global layout file in your app that is client-side and add the code there instead.
 
 ```tsx
+'use client'
 import Script from 'next/script'
 
 export default function RootLayout({
