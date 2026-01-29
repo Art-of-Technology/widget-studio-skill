@@ -13,6 +13,38 @@ Before starting the integration, you MUST ask the user for their **Site Key**. T
 
 **Always ask:** "What is your Widget Studio site key?"
 
+## ⚠️ CRITICAL: Code Implementation Rules
+
+**DO NOT SUMMARIZE OR PARAPHRASE THE CODE SNIPPETS.**
+
+When implementing Widget Studio integration:
+
+1. **Copy code exactly as shown** - Do not simplify, shorten, or "optimize" the code examples
+2. **Include ALL parts** - Every line in the code snippets is intentional and required
+3. **Preserve structure** - Keep the exact formatting, variable names, and initialization patterns
+4. **No shortcuts** - Do not skip the double-init prevention logic for Shopify/WordPress
+5. **No "equivalent" alternatives** - Use the exact patterns provided, not similar approaches
+
+### Why This Matters
+
+- The SDK initialization order is specific and tested
+- The `__widgetx_inited` flag prevents real production bugs
+- TypeScript declarations must be exact for proper type checking
+- Script loading strategies (`async`, `afterInteractive`) are performance-optimized
+
+### ❌ DON'T DO THIS:
+- "Here's a simplified version..."
+- "You can also just add..."
+- "A shorter approach would be..."
+- Omitting the cleanup function in React
+- Skipping TypeScript type declarations
+- Removing the polling logic (`setTimeout(init, 50)`)
+
+### ✅ DO THIS:
+- Copy the complete code block for the detected project type
+- Replace ONLY `YOUR_SITE_KEY` with the actual key
+- Keep all comments and structure intact
+
 ## Project Detection
 
 Detect the project type by checking for these files:
